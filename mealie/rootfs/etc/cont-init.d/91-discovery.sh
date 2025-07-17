@@ -8,7 +8,7 @@ config=$(\
 )
 
 if bashio::discovery "mealie" "${config}" > /dev/null; then
-    bashio::log.info "Successfully send discovery information to Home Assistant."
+    bashio::log.info "Successfully sent discovery information to Home Assistant."
 else
     bashio::log.error "Discovery message to Home Assistant failed!"
 fi
