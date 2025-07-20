@@ -3,7 +3,7 @@ declare config
 
 config=$(\
     bashio::var.json \
-        host "$(bashio::addon.ip_address)" \
+        host "http://127.0.0.1" \
         port "^$(bashio::addon.port 9001)" \
 )
 
