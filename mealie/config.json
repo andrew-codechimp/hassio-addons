@@ -1,5 +1,8 @@
 {
-  "arch": ["aarch64", "amd64"],
+  "arch": [
+    "aarch64",
+    "amd64"
+  ],
   "codenotary": "alexandrep.github@gmail.com",
   "description": "Mealie is a self hosted recipe manager and meal planner built in Vue",
   "devices": [
@@ -65,19 +68,27 @@
     "/dev/nvme1",
     "/dev/nvme2"
   ],
-  "discovery": ["mealie"],
+  "discovery": [
+    "mealie"
+  ],
   "environment": {
     "BASE_SUBPATH": "/mealie/",
     "DATA_DIR": "/config",
     "DB_ENGINE": "sqlite",
     "MAX_WORKERS": "1",
+    "NUXT_APP_BASE_URL": "/mealie/",
     "WEB_CONCURRENCY": "2",
     "WEB_GUNICORN": "true",
     "WORKERS_PER_CORE": "0.5"
   },
   "image": "ghcr.io/alexbelgium/mealie-{arch}",
   "ingress": true,
-  "map": ["addon_config:rw", "homeassistant_config:rw", "share:rw", "ssl:rw"],
+  "map": [
+    "addon_config:rw",
+    "homeassistant_config:rw",
+    "share:rw",
+    "ssl:rw"
+  ],
   "name": "Mealie",
   "options": {
     "ALLOW_SIGNUP": true,
@@ -109,5 +120,5 @@
   "slug": "mealie",
   "udev": true,
   "url": "https://github.com/alexbelgium/hassio-addons",
-  "version": "v3.0.0"
+  "version": "v3.0.1-6"
 }

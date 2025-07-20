@@ -1,3 +1,4 @@
+
 # Home assistant add-on: addons updater
 
 [![Donate][donation-badge]](https://www.buymeacoffee.com/alexbelgium)
