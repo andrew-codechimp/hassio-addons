@@ -1,3 +1,7 @@
+## v3.0.1-7 (20-07-2025)
+
+- Add Home Assistant discovery script
+
 ## v3.0.1-6 (18-07-2025)
 - Define NUXT_APP_BASE_URL as /mealie/
 
