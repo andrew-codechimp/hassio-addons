@@ -1,3 +1,6 @@
+## v3.0.2-3 (27-07-2025)
+- Add Discovery
+
 ## v3.0.2-2 (25-07-2025)
 - Minor bugs fixed
 
