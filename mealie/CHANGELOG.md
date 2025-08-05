@@ -1,5 +1,8 @@
-## v3.0.2-3 (27-07-2025)
+## v3.0.2-4 (06-08-2025)
 - Add Discovery
+
+## v3.0.2-3 (05-08-2025)
+- Prevent nginx from rewriting JSON responses to resolve recipe import errors
 
 ## v3.0.2-2 (25-07-2025)
 - Minor bugs fixed

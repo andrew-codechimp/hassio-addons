@@ -1,4 +1,3 @@
-## &#9888; Open Request : [✨ [REQUEST] immich and Nextcloud Ingress support (opened 2025-03-15)](https://github.com/alexbelgium/hassio-addons/issues/1812) by [@bessertristan09](https://github.com/bessertristan09)
 # Home assistant add-on: immich
 
 ⚠️ The project is under very active development. Expect bugs and changes. Do not use it as the only way to store your photos and videos! (from the developer)
@@ -30,25 +29,61 @@ This addon is based on the [docker image](https://github.com/imagegenius/docker-
 
 ## Configuration
 
-Postgresql can be either internal or external
+Webui can be found at `<your-ip>:8080`. PostgreSQL/MySQL can be either internal or external.
+
+### Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `data_location` | str | `/share/immich` | Path where Immich data is stored |
+| `library_location` | str | | Path to photo/video library |
+| `TZ` | str | | Timezone (e.g., `Europe/London`) |
+| `localdisks` | str | | Local drives to mount (e.g., `sda1,sdb1,MYNAS`) |
+| `networkdisks` | str | | SMB shares to mount (e.g., `//SERVER/SHARE`) |
+| `cifsusername` | str | | SMB username for network shares |
+| `cifspassword` | str | | SMB password for network shares |
+| `cifsdomain` | str | | SMB domain for network shares |
+| `DB_HOSTNAME` | str | `localhost` | Database hostname |
+| `DB_USERNAME` | str | `immich` | Database username |
+| `DB_PASSWORD` | str | | Database password |
+| `DB_DATABASE_NAME` | str | `immich` | Database name |
+| `DB_PORT` | int | `5432` | Database port |
+| `DB_ROOT_PASSWORD` | str | | Database root password |
+| `JWT_SECRET` | str | | JWT secret for authentication |
+| `DISABLE_MACHINE_LEARNING` | bool | `false` | Disable ML features |
+| `MACHINE_LEARNING_WORKERS` | int | `1` | Number of ML workers |
+| `MACHINE_LEARNING_WORKER_TIMEOUT` | int | `120` | ML worker timeout (seconds) |
+
+### Example Configuration
 
 ```yaml
-    "PGID": "int",
-    "PUID": "int",
-    "TZ": "str?",
-    "cifsdomain": "str?",
-    "cifspassword": "str?",
-    "cifsusername": "str?",
-    "data_location": "str",
-    "localdisks": "str?",
-    "networkdisks": "str?",
-    "DB_HOSTNAME": "str?",
-    "DB_USERNAME": "str?",
-    "DB_PORT": "int?",
-    "DB_PASSWORD": "str?",
-    "DB_DATABASE_NAME": "str?",
-    "JWT_SECRET": "str?"
+data_location: "/share/immich"
+library_location: "/media/photos"
+TZ: "Europe/London"
+localdisks: "sda1,sdb1"
+networkdisks: "//192.168.1.100/photos"
+cifsusername: "photouser"
+cifspassword: "password123"
+DB_HOSTNAME: "core-mariadb"
+DB_USERNAME: "immich"
+DB_PASSWORD: "secure_password"
+DB_DATABASE_NAME: "immich"
+JWT_SECRET: "your-secret-key-here"
 ```
+
+### Mounting Drives
+
+This addon supports mounting both local drives and remote SMB shares:
+
+- **Local drives**: See [Mounting Local Drives in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-Local-Drives-in-Addons)
+- **Remote shares**: See [Mounting Remote Shares in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Mounting-remote-shares-in-Addons)
+
+### Custom Scripts and Environment Variables
+
+This addon supports custom scripts and environment variables through the `addon_config` mapping:
+
+- **Custom scripts**: See [Running Custom Scripts in Addons](https://github.com/alexbelgium/hassio-addons/wiki/Running-custom-scripts-in-Addons)
+- **Environment variables**: See [Add Environment Variables to your Addon](https://github.com/alexbelgium/hassio-addons/wiki/Add-Environment-variables-to-your-Addon)
 
 ## Installation
 
