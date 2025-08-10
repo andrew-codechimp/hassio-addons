@@ -1,3 +1,6 @@
+## v3.0.2-4 (10-08-2025)
+- Send discovery message to Home Assistant
+
 ## v3.0.2-3 (05-08-2025)
 - Prevent nginx from rewriting JSON responses to resolve recipe import errors
 
